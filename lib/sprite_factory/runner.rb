@@ -123,6 +123,10 @@ module SpriteFactory
       config[:output] || input
     end
 
+    def columns
+      config[:columns]
+    end
+
     def output_image_file
       config[:output_image] || "#{output}.png"
     end
@@ -218,7 +222,7 @@ module SpriteFactory
     end
 
     def layout_images(images)
-      layout_strategy.layout(images, :width => width, :height => height, :hpadding => hpadding, :vpadding => vpadding, :hmargin => hmargin, :vmargin => vmargin)
+      layout_strategy.layout(images, :width => width, :height => height, :hpadding => hpadding, :vpadding => vpadding, :hmargin => hmargin, :vmargin => vmargin, :columns => columns)
     end
 
     #----------------------------------------------------------------------------

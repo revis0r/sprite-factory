@@ -20,6 +20,7 @@ op.on("-v", "--version") do
 end
 
 layout_help       = "specify layout orientation   ( horizontal, vertical, packed )"
+columns_help      = "specify columns count (ONLY for grid layout)"
 style_help        = "specify stylesheet syntax  ( css, scss, sass )"
 library_help      = "specify image library to use ( rmagic, chunkypng )"
 selector_help     = "specify custom selector to use for each css rule ( default: 'img.' )"
@@ -30,6 +31,7 @@ pngcrush_help     = "use pngcrush to optimize generated image"
 nocomments_help   = "suppress comments in generated stylesheet"
 
 op.on("--layout       [ORIENTATION]", layout_help)       {|value| options[:layout]       = value }
+op.on("--columns      [COLUMNS]",     columns_help)      {|value| options[:columns]      = value }
 op.on("--style        [STYLE]",       style_help)        {|value| options[:style]        = value }
 op.on("--library      [LIBRARY]",     library_help)      {|value| options[:library]      = value }
 op.on("--selector     [SELECTOR]",    selector_help)     {|value| options[:selector]     = value }

@@ -36,6 +36,7 @@ module SpriteFactory
     autoload :Horizontal, File.join(LIB, 'sprite_factory/layout/horizontal') # concrete module for layout in a single horizontal strip
     autoload :Vertical,   File.join(LIB, 'sprite_factory/layout/vertical')   # concrete module for layout in a single vertical strip
     autoload :Packed,     File.join(LIB, 'sprite_factory/layout/packed')     # concrete module for layout in a bin-packed square
+    autoload :Grid,       File.join(LIB, 'sprite_factory/layout/grid')     # concrete module for layout in a bin-packed square
 
     def self.horizontal
       Horizontal
@@ -47,6 +48,10 @@ module SpriteFactory
 
     def self.packed
       Packed
+    end
+
+    def self.grid
+      Grid
     end
 
   end
