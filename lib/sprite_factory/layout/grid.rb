@@ -33,6 +33,10 @@ module SpriteFactory
         row = 0
         column = 0
         images.each do |i|
+          if column >= max_columns
+            column = 0
+            row += 1
+          end
           i[:x] = column * max_width
           i[:y] = row * max_height
           i[:cssw] = max_width
@@ -40,10 +44,6 @@ module SpriteFactory
           i[:cssh] = max_height
           i[:cssy] = i[:y]
           column += 1
-          if column >= max_columns
-            column = 0
-            row += 1
-          end
         end
 
         { :width => max_columns * max_width, :height => (row+1)*max_height }
